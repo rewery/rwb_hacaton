@@ -1,0 +1,8 @@
+services:
+  mesh:
+    build: .
+    ports: ["8000:8000"]
+    volumes:
+      - ./data:/app/data      # правки Excel видны сайту без пересборки
+      - ./static:/app/static  # правки интерфейса — тоже
+    restart: unless-stopped
